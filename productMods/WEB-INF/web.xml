@@ -676,6 +676,15 @@
   </servlet-mapping>
 
   <servlet>
+    <servlet-name>QrCodeAjax</servlet-name>
+    <servlet-class>edu.cornell.mannlib.vitro.webapp.controller.ajax.QrCodeAjaxController</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>QrCodeAjax</servlet-name>
+    <url-pattern>/qrCodeAjax</url-pattern>
+  </servlet-mapping>
+
+  <servlet>
     <servlet-name>ShowAuth</servlet-name>
     <servlet-class>edu.cornell.mannlib.vitro.webapp.controller.admin.ShowAuthController</servlet-class>
   </servlet>
@@ -691,6 +700,15 @@
   <servlet-mapping>
     <servlet-name>ShowConfiguration</servlet-name>
     <url-pattern>/admin/showConfiguration</url-pattern>
+  </servlet-mapping>
+
+  <servlet>
+    <servlet-name>ShowRDFSources</servlet-name>
+    <servlet-class>edu.cornell.mannlib.vitro.webapp.controller.admin.ShowSourcesController</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ShowRDFSources</servlet-name>
+    <url-pattern>/admin/showSources</url-pattern>
   </servlet-mapping>
 
   <servlet>
@@ -799,6 +817,15 @@
   <servlet-mapping>
     <servlet-name>ShowObjectPropertyHierarchyController</servlet-name>
     <url-pattern>/showObjectPropertyHierarchy</url-pattern>
+  </servlet-mapping>
+
+  <servlet>
+    <servlet-name>ListFauxPropertiesController</servlet-name>
+    <servlet-class>edu.cornell.mannlib.vitro.webapp.controller.freemarker.ListFauxPropertiesController</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ListFauxPropertiesController</servlet-name>
+    <url-pattern>/listFauxProperties</url-pattern>
   </servlet-mapping>
 
   <servlet>
@@ -919,7 +946,16 @@
     <url-pattern>/populateselect</url-pattern>
   </servlet-mapping>
   
-  <!--  ===Adding this for external lookup, check later  -->
+   <servlet>
+    <servlet-name>DataAutocompleteController</servlet-name>
+    <servlet-class>edu.cornell.mannlib.vitro.webapp.search.controller.DataAutocompleteController</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>DataAutocompleteController</servlet-name>
+    <url-pattern>/dataautocomplete</url-pattern>
+  </servlet-mapping>
+  
+   <!--  ===Adding this for external lookup, check later  -->
     <servlet>
     <servlet-name>ExternalLookupAutocompleteController</servlet-name>
     <servlet-class>edu.cornell.mannlib.vitro.webapp.search.controller.ExternalLookupAutocompleteController</servlet-class>
@@ -930,16 +966,7 @@
     <url-pattern>/externalautocomplete</url-pattern>
   </servlet-mapping>
      <!--  ===End Adding this for external lookup, check later  -->
-     
   
-   <servlet>
-    <servlet-name>DataAutocompleteController</servlet-name>
-    <servlet-class>edu.cornell.mannlib.vitro.webapp.search.controller.DataAutocompleteController</servlet-class>
-  </servlet>
-  <servlet-mapping>
-    <servlet-name>DataAutocompleteController</servlet-name>
-    <url-pattern>/dataautocomplete</url-pattern>
-  </servlet-mapping>
  
   <servlet>
     <servlet-name>ReorderController</servlet-name>
@@ -1081,6 +1108,15 @@
     <servlet-name>individual</servlet-name>
     <servlet-class>edu.cornell.mannlib.vitro.webapp.controller.individual.IndividualController</servlet-class>
   </servlet>
+  
+   <servlet>
+    <servlet-name>ExternalIndividualController</servlet-name>
+    <servlet-class>edu.cornell.mannlib.vitro.webapp.controller.individual.ExternalIndividualController</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ExternalIndividualController</servlet-name>
+    <url-pattern>/externalIndividualController</url-pattern>
+  </servlet-mapping>
 
   <servlet>
     <servlet-name>authenticate</servlet-name>
