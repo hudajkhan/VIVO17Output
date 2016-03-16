@@ -12,6 +12,7 @@ import javax.servlet.http.HttpServletResponse;
 
 import net.sf.json.JSONArray;
 
+import org.apache.commons.lang.StringUtils;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 
@@ -68,7 +69,16 @@ public class ExternalLookupAutocompleteController extends VitroAjaxController {
 			//type param may still be employed
 			String typeParam = vreq.getParameter(PARAM_RDFTYPE);
 			String serviceURI = vreq.getParameter(SERVICE_URI);
-
+			if(StringUtils.isNotEmpty(qtxt)) {
+				log.debug("Request, qtxt is " + qtxt);
+			} else {
+				log.debug("qtxt parameter is empty");
+			}
+			if(StringUtils.isNotEmpty(qtxt)) {
+				log.debug("Request, serviceURI is " + serviceURI);
+			} else {
+				log.debug("ServiceURI is empty");
+			}
 		
 
 			ExternalLookupService externalLookup = getExternalLookupService(serviceURI, vreq);
@@ -77,9 +87,13 @@ public class ExternalLookupAutocompleteController extends VitroAjaxController {
 			//We are keeping the json object library consistent -> net.sf.json
 			//NOT org.json which is a different matter
 			JSONArray jsonArray = new JSONArray();
-			for (LookupResult result : results) {
-				// jsonArray.put(result.toMap());
-				jsonArray.add(result.toJSONObject());
+			if(results != null) {
+				for (LookupResult result : results) {
+					// jsonArray.put(result.toMap());
+					jsonArray.add(result.toJSONObject());
+				}
+			} else {
+				log.debug("Results object is null");
 			}
 			response.getWriter().write(jsonArray.toString());
 
@@ -168,6 +182,7 @@ public class ExternalLookupAutocompleteController extends VitroAjaxController {
 			}
 			
 			//Initialize this class
+			log.debug("Initializing " + serviceClassName + " with serviceInfo " + serviceInfo.toString());
 			externalServiceClass.initializeLookup(serviceInfo);
 			return externalServiceClass;
 

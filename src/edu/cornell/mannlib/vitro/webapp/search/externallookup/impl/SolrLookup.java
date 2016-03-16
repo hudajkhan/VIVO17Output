@@ -110,9 +110,11 @@ public class SolrLookup implements ExternalLookupService {
 		String results = null;
 		String queryTerm = this.getNameQuery(term);
 		String solrURL = solrAPI + "q="+ queryTerm + "&" + jsonFormatParameter;
+		log.debug("Solr URL is " + solrURL);
 		try {
 
 			StringWriter sw = new StringWriter();
+			log.debug("Creating URL object with solr URL");
 			URL rss = new URL(solrURL);
 
 			BufferedReader in = new BufferedReader(new InputStreamReader(
@@ -128,7 +130,7 @@ public class SolrLookup implements ExternalLookupService {
 			// System.out.println("results before processing: "+results);
 
 		} catch (Exception ex) {
-			log.error("Exception occurred in retrieving results",ex);
+			log.error("Exception occurred in retrieving results from Solr",ex);
 			//ex.printStackTrace();
 			return null;
 		}
@@ -163,6 +165,8 @@ public class SolrLookup implements ExternalLookupService {
 
 				throw ex;
 			}
+		} else {
+			log.debug("Results are empty when passed to processSolrResults");
 		}
 
 		//This is just a test for string utils, will take this out
