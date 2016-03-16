@@ -9,7 +9,10 @@ function getCustomFormHandler(serviceURI) {
 	//Maps a serviceURI to an actual variable, i.e. the custom lookup handler object
 	var mapping = {"http://vivo.earthcollab.edu/individual/climateSolrLookup":getExternalLookup_solr,
 			"http://vivo.earthcollab.edu/individual/cornellSolrLookup":getExternalLookup_solr,
-			"http://vivo.earthcollab.edu/individual/testCornellSolrLookup":getExternalLookup_solr};
+			"http://vivo.earthcollab.edu/individual/testCornellSolrLookup":getExternalLookup_solr,
+			"http://vivo.earthcollab.edu/individual/unavcoSolrLookup": getExternalLookup_solr,
+			"http://vivo.earthcollab.edu/individual/ncarSolrLookup": getExternalLookup_solr
+			};
 	
 	if((serviceURI == null) || (!(serviceURI in mapping))) {
 		return customForm;
