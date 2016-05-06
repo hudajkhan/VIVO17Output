@@ -4,3 +4,5 @@ externalLookupServices.n3
 /.build/
 /config/debug.log4j.properties
 /build.properties
+/.classpath
+/.project
