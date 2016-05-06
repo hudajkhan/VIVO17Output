@@ -1,3 +1,6 @@
 /bin/
 /rdf/abox/filegraph/externalLookupServices.n3
 externalLookupServices.n3
+/.build/
+/config/debug.log4j.properties
+/build.properties

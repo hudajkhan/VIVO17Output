@@ -45,6 +45,7 @@ import edu.cornell.mannlib.vitro.webapp.web.ContentType;
 import edu.cornell.mannlib.vitro.webapp.web.beanswrappers.ReadOnlyBeansWrapper;
 import edu.cornell.mannlib.vitro.webapp.web.templatemodels.individual.GroupedPropertyList;
 import edu.cornell.mannlib.vitro.webapp.web.templatemodels.individual.IndividualTemplateModel;
+import edu.cornell.mannlib.vitro.webapp.web.templatemodels.individual.ObjectPropertyTemplateModel;
 import edu.cornell.mannlib.vitro.webapp.web.templatemodels.individual.PropertyGroupTemplateModel;
 import edu.cornell.mannlib.vitro.webapp.web.templatemodels.individual.PropertyTemplateModel;
 import edu.ucsf.vitro.opensocial.OpenSocialManager;
@@ -180,6 +181,7 @@ class IndividualResponseBuilder {
         returnResults.put("propertyList", gpl);
         Map<String, Object> parsedList = parsePropertyList(gpl);
         returnResults.put("parsedList", parsedList);
+        
         //Convert all of body to json and return
         ObjectMapper mapper = new ObjectMapper();
 		try {
