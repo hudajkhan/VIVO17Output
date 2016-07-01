@@ -38,7 +38,6 @@ $(document).ready(function(){
 						} else {
 							//if information is not being returned, then go ahead and replace the external content div
 								var propertyInfoItems = propertyKey.split("-");
-								console.log(propertyInfoItems);
 								if(propertyInfoItems.length == 3) {
 									var propertyURI = propertyInfoItems[0];
 									var domainURI = propertyInfoItems[1];
@@ -60,8 +59,9 @@ $(document).ready(function(){
 	
 		function displayExternalLinkedIcons(externalURI, externalBaseURL, externalSourceLabel) {
 			if(externalURI != "" && externalBaseURL != "") {
-				var imageHTML = "<a  href='" + externalBaseURL + "/individual?uri=" + externalURI + "' title='see linked profile at " + externalSourceLabel + "'><img class='linkedprofile' src='" + baseUrl + "/images/unavcoicon.gif'></a>";
+				var imageHTML = "<a  href='" + externalBaseURL + "/individual?uri=" + externalURI + "' title='see linked profile at " + externalSourceLabel + "'><img class='linkedprofile' src='" + appBase + "/images/unavcoicon.gif'></a>";
 				$("#externalProfileImages").append(imageHTML);
+				
 			}
 		}
 //		 $.each($('li.external-property-list-item'), function() {

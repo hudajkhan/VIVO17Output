@@ -71,7 +71,8 @@
                 <h1 class="vcard foaf-person">
                     <#-- Label -->
                     <span class="fn"><@p.label individual editable labelCount localesCount/>
-                    <#if foafext.hasExternalInfo()><span id='externalProfileImages'></span></#if></span>
+                    <#if foafext.hasExternalInfo()><span id='externalProfileImages'></span></#if>
+                    </span>
 
                     <#--  Display preferredTitle if it exists; otherwise mostSpecificTypes -->
                     <#assign title = propertyGroups.pullProperty("http://purl.obolibrary.org/obo/ARG_2000028","http://www.w3.org/2006/vcard/ns#Title")!>
@@ -154,6 +155,8 @@
         viewRDFProfile: '${i18n().view_profile_in_rdf}',
         closeString: '${i18n().close}'
     };
+    var baseUrl = '${urls.base}';
+   
 </script>
 
 ${stylesheets.add('<link rel="stylesheet" href="${urls.base}/css/individual/individual.css" />',
