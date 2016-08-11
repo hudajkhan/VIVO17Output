@@ -4,6 +4,7 @@ $(document).ready(function(){
     //Shortcut, usually utilize an object
 	getExternalInfo();
 	function getExternalInfo() {
+		
 		var externalURIHash = createExternalURIHash();
 		for(var key in externalURIHash) {
 			//Each key represents a unique endpoint request, i.e. external URI + external Service URL
@@ -104,8 +105,8 @@ $(document).ready(function(){
 			 var rangeURI = $(this).attr("rangeURI");
 			 var externalBaseURL = $(this).attr("externalBaseURL");
 			 var externalSourceLabel = $(this).attr("sourceLabel");
-			 //These should be empty strings and not null/undefined when values don't exist
-			 if(externalURI != null && externalURI != "" && externalServiceURL != null && externalServiceURL != "") {
+			 //These should be empty strings and not null/undefined when values don't exist, and that externalURI does not equal the URI of the item itself
+			 if(externalURI != null && externalURI != "" && externalURI != thisURI && externalServiceURL != null && externalServiceURL != "") {
 				 
 				 var key = externalURI + "-" + externalServiceURL;
 				 var propertiesList = [];
