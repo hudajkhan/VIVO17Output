@@ -117,6 +117,7 @@ display:getSameAsEntityPositions a <java:edu.cornell.mannlib.vitro.webapp.utils.
          ?externalURI core:externalServiceDefinition ?externalServiceURI . 
          ?externalServiceURI core:externalURL ?externalServiceURL . 
          ?externalServiceURI rdfs:label ?externalServiceName .  
+         FILTER (str(?externalURI) != str(?individualURI))
       } 
         """ .
  #Contact info: additional email
