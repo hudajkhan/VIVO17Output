@@ -174,7 +174,7 @@ public class ExternalEntityDataGetter extends DataGetterBase implements DataGett
     	String boundQueryText = bindParameters(queryText, merged);
     	ResultSet rs = doQueryOnRDFService(boundQueryText);
     	List<ExternalURIInformation> externalURIInfo = new ArrayList<ExternalURIInformation>();
-    	
+    	log.debug("Executing ExternalEntity Query " + boundQueryText);
     	//Query results should include the serviceURL and service name
     	//?externalURI ?externalServiceURI ?externalServiceName ?externalServiceURL
     	while(rs.hasNext()) {

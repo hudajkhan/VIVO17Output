@@ -76,12 +76,12 @@
 					<#if serviceName?has_content>
 						<#local label = label + " (" + serviceName + ")" />
 					</#if>
-			<li class="li-indicator" externalURI="${externalURI!}" propertyURI="${property.uri!}" domainURI="${property.domainUri!}" rangeURI="${property.rangeUri!}">	            
+			<li class="li-indicator external-info-item" externalURI="${externalURI!}" propertyURI="${property.uri!}" domainURI="${property.domainUri!}" rangeURI="${property.rangeUri!}">	            
 					<div>
     				<img id="loadingIndicator" class="indicator" src="${urls.base}/images/indicatorWhite.gif" alt="${i18n().processing_indicator}"/>
     				</div>
     		</li>
-					<li class="hidden subclass external-property-list-item" role="listitem"  externalURI="${externalURI!}"  externalServiceURL="${serviceURL!}" 
+					<li class="hidden subclass external-property-list-item external-info-item" role="listitem"  externalURI="${externalURI!}"  externalServiceURL="${serviceURL!}" 
 		                propertyURI="${property.uri!}" domainURI="${property.domainUri!}" rangeURI="${property.rangeUri!}" externalBaseURL="${externalBaseURL!}"
 		                sourceLabel="${label}">
 		                &nbsp;
